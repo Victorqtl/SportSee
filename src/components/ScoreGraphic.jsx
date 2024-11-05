@@ -45,6 +45,14 @@ export default function ScoreGraphic({ userMainData }) {
 					cornerRadius={10}
 				/>
 				<text
+					x='5%'
+					y='13.5%'
+					textAnchor='left'
+					dominantBaseline='left'
+					style={{ fontSize: '16px' }}>
+					Score
+				</text>
+				<text
 					x='50%'
 					y='45%'
 					textAnchor='middle'

@@ -1,7 +1,7 @@
 import { mockedUserMainData } from '@/components/APICall';
 import Activity from '@/components/Activity';
 import UserData from '@/components/UserData';
-import Score from '@/components/Score';
+import Performance from '@/components/Perfomance';
 import ScoreGraphic from '@/components/ScoreGraphic';
 
 export default async function Profile({ params }) {
@@ -21,8 +21,13 @@ export default async function Profile({ params }) {
 						<div className='h-[320px] w-[835px]'>
 							<Activity id={id} />
 						</div>
-						<div className='h-[263px] w-[268px] bg-[#FBFBFB]'>
-							<ScoreGraphic userMainData={userMainData} />
+						<div className='flex'>
+							<div className='h-[263px] w-[268px] bg-[#282D30]'>
+								<Performance id={id} />
+							</div>
+							<div className='h-[263px] w-[268px] bg-[#FBFBFB]'>
+								<ScoreGraphic userMainData={userMainData} />
+							</div>
 						</div>
 					</div>
 					<div className='flex flex-col gap-8'>

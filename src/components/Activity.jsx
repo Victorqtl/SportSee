@@ -64,6 +64,14 @@ export default function Activity({ id }) {
 					fill='#E60000'
 					radius={[5, 5, 0, 0]}
 				/>
+				<text
+					x='3%'
+					y='13.5%'
+					textAnchor='left'
+					dominantBaseline='left'
+					style={{ fontSize: '16px' }}>
+					Activité quotidienne
+				</text>
 			</BarChart>
 		</ResponsiveContainer>
 	);

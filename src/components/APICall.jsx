@@ -16,9 +16,6 @@ export const mockedUserAverageSessions = userId => {
 };
 
 export const mockedUserPerformance = userId => {
-	return new Promise(resolve => {
-		setTimeout(() => {
-			resolve(USER_PERFORMANCE.find(user => user.userId === userId));
-		}, 1000);
-	});
+	const currentUserData = USER_PERFORMANCE.find(user => user.userId === userId);
+	return currentUserData ? currentUserData : null;
 };
