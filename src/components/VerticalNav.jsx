@@ -33,7 +33,9 @@ export default function VerticalNav() {
 					/>
 				</li>
 			</ul>
-			<p className='absolute bottom-28 -rotate-90 text-white text-xs whitespace-nowrap'>Copyright, SportSee 2020</p>
+			<p className='absolute bottom-28 -rotate-90 text-white text-xs whitespace-nowrap'>
+				Copyright, SportSee 2020
+			</p>
 		</nav>
 	);
 }

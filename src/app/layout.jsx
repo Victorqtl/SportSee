@@ -7,7 +7,7 @@ export const metadata = {
 	description: 'The best sports tracking app',
 };
 
-export default function RootLayout({children}: {children: React.ReactNode}) {
+export default function RootLayout({ children }) {
 	return (
 		<html lang='fr'>
 			<body>
