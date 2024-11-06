@@ -36,7 +36,7 @@ export default function ScoreGraphic({ userMainData }) {
 				<circle
 					cx='50%'
 					cy='50%'
-					r='78' // Rayon légèrement inférieur à innerRadius
+					r='78'
 					fill='#FFFFFF'
 				/>
 				<RadialBar

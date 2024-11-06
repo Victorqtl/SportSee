@@ -24,7 +24,7 @@ export default function Activity({ id }) {
 					left: 25,
 					bottom: 25,
 				}}
-				style={{ background: '#FBFBFB' }}>
+				style={{ background: '#FBFBFB', borderRadius: '5px' }}>
 				<CartesianGrid
 					vertical={false}
 					strokeDasharray='3 3'

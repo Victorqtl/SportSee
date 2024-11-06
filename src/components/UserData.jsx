@@ -6,7 +6,7 @@ import burger from '@/assets/burger.svg';
 export default function UserMainData({ userMainData }) {
 	return (
 		<>
-			<div className='flex items-center gap-6 w-[258px] h-[124px] p-8 bg-[#FBFBFB] rounded-[5px]'>
+			<div className='flex items-center gap-6 w-[100%] h-[124px] p-8 bg-[#FBFBFB] rounded-[5px]'>
 				<div className='flex justify-center items-center w-[60px] h-[60px] bg-red-200 rounded-md'>
 					<img
 						src={energy.src}
@@ -18,7 +18,7 @@ export default function UserMainData({ userMainData }) {
 					<p className='text-sm text-[#74798C]'>Calories</p>
 				</div>
 			</div>
-			<div className='flex items-center gap-6 w-[258px] h-[124px] p-8 bg-[#FBFBFB] rounded-[5px]'>
+			<div className='flex items-center gap-6 w-[100%] h-[124px] p-8 bg-[#FBFBFB] rounded-[5px]'>
 				<div className='flex justify-center items-center w-[60px] h-[60px] bg-blue-200 rounded-md'>
 					<img
 						src={chicken.src}
@@ -30,7 +30,7 @@ export default function UserMainData({ userMainData }) {
 					<p className='text-sm text-[#74798C]'>Proteines</p>
 				</div>
 			</div>
-			<div className='flex items-center gap-6 w-[258px] h-[124px] p-8 bg-[#FBFBFB] rounded-[5px]'>
+			<div className='flex items-center gap-6 w-[100%] h-[124px] p-8 bg-[#FBFBFB] rounded-[5px]'>
 				<div className='flex justify-center items-center w-[60px] h-[60px] bg-yellow-200 rounded-md'>
 					<img
 						src={apple.src}
@@ -42,7 +42,7 @@ export default function UserMainData({ userMainData }) {
 					<p className='text-sm text-[#74798C]'>Glucides</p>
 				</div>
 			</div>
-			<div className='flex items-center gap-6 w-[258px] h-[124px] p-8 bg-[#FBFBFB] rounded-[5px]'>
+			<div className='flex items-center gap-6 w-[100%] h-[124px] p-8 bg-[#FBFBFB] rounded-[5px]'>
 				<div className='flex justify-center items-center w-[60px] h-[60px] bg-pink-200 rounded-md'>
 					<img
 						src={burger.src}
