@@ -22,9 +22,14 @@ export default function Activity({ id }) {
 					top: 25,
 					right: 25,
 					left: 25,
-					bottom: 25,
+					bottom: window.innerWidth >= 1280 ? 25 : 0,
 				}}
-				style={{ background: '#FBFBFB', borderRadius: '5px' }}>
+				className='bg-[#FBFBFB] rounded-[5px]'>
+				<text
+					x='5%'
+					y={43}>
+					Activité quotidienne
+				</text>
 				<CartesianGrid
 					vertical={false}
 					strokeDasharray='3 3'
@@ -48,7 +53,9 @@ export default function Activity({ id }) {
 					align='right'
 					verticalAlign='top'
 					iconType='circle'
-					wrapperStyle={{ paddingBottom: 45 }}
+					wrapperStyle={{
+						paddingBottom: window.innerWidth >= 1280 ? 40 : 20,
+					}}
 				/>
 				<Bar
 					barSize={10}
@@ -64,14 +71,6 @@ export default function Activity({ id }) {
 					fill='#E60000'
 					radius={[5, 5, 0, 0]}
 				/>
-				<text
-					x='3%'
-					y='13.5%'
-					textAnchor='left'
-					dominantBaseline='left'
-					style={{ fontSize: '16px' }}>
-					Activité quotidienne
-				</text>
 			</BarChart>
 		</ResponsiveContainer>
 	);

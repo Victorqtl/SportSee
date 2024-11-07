@@ -1,7 +1,6 @@
 'use client';
 
 import { mockedUserPerformance } from './APICall';
-
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
 
 export default function Performance({ id }) {
@@ -13,6 +12,7 @@ export default function Performance({ id }) {
 			kind: performance.kind[item.kind],
 		}))
 		.reverse();
+
 	return (
 		<ResponsiveContainer
 			width='100%'
@@ -27,7 +27,7 @@ export default function Performance({ id }) {
 					dataKey='kind'
 					tick={{
 						fill: '#FFFFFF',
-						fontSize: 12,
+						fontSize: window.innerWidth >= 1280 ? 12 : 8,
 					}}
 					dy={3}
 				/>

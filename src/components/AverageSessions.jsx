@@ -61,19 +61,19 @@ export default function AverageSessions({ id }) {
 					activeDot={{ r: 4, fill: '#FFFFFF' }}
 				/>
 				<text
-					x='5%'
-					y='13.5%'
+					x='8%'
+					y='12%'
 					textAnchor='left'
-					dominantBaseline='left'
-					style={{ fontSize: '16px', fill: '#FFFFFF' }}>
+					dominantBaseline='middle'
+					className='xl:text-[16px] lg:text-[14px] fill-[#FFFFFF]'>
 					Durée moyenne des
 				</text>
 				<text
-					x='5%'
-					y='20.5%'
+					x='8%'
+					y='19%'
 					textAnchor='left'
-					dominantBaseline='left'
-					style={{ fontSize: '16px', fill: '#FFFFFF' }}>
+					dominantBaseline='middle'
+					className='xl:text-[16px] lg:text-[14px] fill-[#FFFFFF]'>
 					sessions
 				</text>
 			</LineChart>

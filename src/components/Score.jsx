@@ -27,16 +27,16 @@ export default function ScoreGraphic({ userMainData }) {
 			<RadialBarChart
 				cx='50%'
 				cy='50%'
-				innerRadius='70'
-				outerRadius='100'
-				barSize={20}
+				innerRadius='50%'
+				outerRadius='90%'
+				barSize={17}
 				data={data}
 				startAngle={-270}
 				endAngle={90}>
 				<circle
 					cx='50%'
 					cy='50%'
-					r='78'
+					r='30%'
 					fill='#FFFFFF'
 				/>
 				<RadialBar
@@ -45,11 +45,11 @@ export default function ScoreGraphic({ userMainData }) {
 					cornerRadius={10}
 				/>
 				<text
-					x='5%'
-					y='13.5%'
+					x='8%'
+					y='12%'
 					textAnchor='left'
-					dominantBaseline='left'
-					style={{ fontSize: '16px' }}>
+					dominantBaseline='middle'
+					className='xl:text-[16px] lg:text-[14px]'>
 					Score
 				</text>
 				<text
@@ -57,7 +57,7 @@ export default function ScoreGraphic({ userMainData }) {
 					y='45%'
 					textAnchor='middle'
 					dominantBaseline='middle'
-					style={{ fontSize: '26px', fontWeight: '600', fill: '#282D30' }}>
+					className='xl:text-[26px] lg:text-[22px] font-semibold fill-[#282D30]'>
 					{roundScore}%
 				</text>
 				<text
@@ -65,7 +65,7 @@ export default function ScoreGraphic({ userMainData }) {
 					y='55%'
 					textAnchor='middle'
 					dominantBaseline='middle'
-					style={{ fontSize: '16px', fill: '#74798C' }}>
+					className='xl:text-[16px] lg:text-[12px] fill-[#74798C]'>
 					de votre
 				</text>
 				<text
@@ -73,7 +73,7 @@ export default function ScoreGraphic({ userMainData }) {
 					y='63%'
 					textAnchor='middle'
 					dominantBaseline='middle'
-					style={{ fontSize: '16px', fill: '#74798C' }}>
+					className='xl:text-[16px] lg:text-[12px] fill-[#74798C]'>
 					objectif
 				</text>
 			</RadialBarChart>
