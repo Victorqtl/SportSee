@@ -1,6 +1,6 @@
 'use client';
 
-import { mockedUserPerformance } from './APICall';
+import { mockedUserPerformance } from '../services/mockedData';
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
 
 export default function Performance({ id }) {

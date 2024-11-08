@@ -1,32 +1,20 @@
 'use client';
 
-import {
-	LineChart,
-	Line,
-	XAxis,
-	YAxis,
-	CartesianGrid,
-	Tooltip,
-	Legend,
-	ResponsiveContainer,
-	Rectangle,
-} from 'recharts';
-import { mockedUserAverageSessions } from './APICall';
+import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer, Rectangle } from 'recharts';
+import useFetch from '@/services/useFetch';
 
 export default function AverageSessions({ id }) {
-	const averageSessions = mockedUserAverageSessions(parseInt(id));
+	const { data, loading, error } = useFetch(id, 'average-sessions');
 
-	const CustomCursor = ({ points }) => {
-		return (
-			<Rectangle
-				fill='rgba(200, 0, 0, 0.1)'
-				x={0}
-				y={0}
-				width={points[0].x}
-				height='100%'
-			/>
-		);
-	};
+	if (loading) {
+		return <div>loading...</div>;
+	}
+
+	if (error) {
+		return <div>Une erreur est survenue</div>;
+	}
+
+	const averageSessions = data.data ? data.data : data;
 
 	return (
 		<ResponsiveContainer

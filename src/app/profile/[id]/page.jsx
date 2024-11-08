@@ -1,14 +1,27 @@
-import { mockedUserMainData } from '@/components/APICall';
+'use client';
+
+import { use } from 'react';
+import useFetch from '@/services/useFetch';
 import Activity from '@/components/Activity';
 import AverageSessions from '@/components/AverageSessions';
 import UserDataCards from '@/components/UserDataCards';
 import Performance from '@/components/Perfomance';
 import Score from '@/components/Score';
 
-export default async function Profile({ params }) {
-	const resolvedParams = await params;
+export default function Profile({ params }) {
+	const resolvedParams = use(params);
 	const { id } = resolvedParams;
-	const userMainData = mockedUserMainData(parseInt(id));
+	const { data, loading, error } = useFetch(id, '');
+
+	if (loading) {
+		return <div>loading...</div>;
+	}
+
+	if (error) {
+		return <div>Une erreur est survenue</div>;
+	}
+
+	const userMainData = data.data ? data.data : data;
 
 	return (
 		<>

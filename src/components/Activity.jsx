@@ -1,12 +1,20 @@
 'use client';
 
-import { mockedUserActivity } from '@/components/APICall';
+import { fetchUserActivity } from '@/services/apiService';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { useEffect, useState } from 'react';
+import useFetch from '@/services/useFetch';
 
 export default function Activity({ id }) {
-	const activity = mockedUserActivity(parseInt(id));
+	const { data, loading, error } = useFetch(id, 'activity');
 
-	const { sessions } = activity;
+	if (loading) return <div>Loading...</div>;
+
+	if (error) {
+		return <div>Une erreur est survenue</div>;
+	}
+
+	const { sessions } = data.data ? data.data : data;
 	const formattedSessions = sessions.map(session => ({
 		...session,
 		day: parseInt(session.day.slice(-2)),
@@ -34,8 +42,19 @@ export default function Activity({ id }) {
 					vertical={false}
 					strokeDasharray='3 3'
 				/>
-				<XAxis dataKey='day' />
-				<YAxis orientation='right' />
+				<XAxis
+					dataKey='day'
+					tickLine={false}
+					stroke='#9B9EAC'
+					dy={10}
+				/>
+				<YAxis
+					orientation='right'
+					tickLine={false}
+					axisLine={false}
+					stroke='#9B9EAC'
+					dx={10}
+				/>
 				<Tooltip
 					contentStyle={{ backgroundColor: '#E60000', color: '#fff' }}
 					itemStyle={{ color: '#fff' }}
