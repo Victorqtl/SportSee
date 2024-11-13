@@ -58,11 +58,28 @@ export default function AverageSessions({ id }) {
 			<LineChart
 				data={formattedSessions}
 				margin={{
-					top: 100,
-					bottom: 30,
+					top: 80,
+					bottom: 40,
 				}}>
+				<defs>
+					<linearGradient
+						id='lineGradient'
+						x1='0'
+						y1='0'
+						x2='1'
+						y2='0'>
+						<stop
+							offset='0%'
+							stopColor='rgba(255, 255, 255, 0.5)'
+						/>
+						<stop
+							offset='100%'
+							stopColor='#FFFFFF'
+						/>
+					</linearGradient>
+				</defs>
 				<XAxis
-					tickMargin={10}
+					tickMargin={20}
 					dataKey='day'
 					axisLine={false}
 					tickLine={false}
@@ -80,7 +97,7 @@ export default function AverageSessions({ id }) {
 					type='monotone'
 					dataKey='sessionLength'
 					name='sessionLength'
-					stroke='#FFFFFF'
+					stroke='url(#lineGradient)'
 					strokeWidth={2}
 					dot={false}
 					activeDot={{ r: 4, fill: '#FFFFFF' }}

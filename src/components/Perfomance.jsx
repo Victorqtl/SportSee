@@ -20,11 +20,20 @@ export default function Performance({ id }) {
 		return <div>Une erreur est survenue</div>;
 	}
 
+	const performanceMapping = {
+		1: 'Cardio',
+		2: 'Énergie',
+		3: 'Endurance',
+		4: 'Force',
+		5: 'Vitesse',
+		6: 'Intensité',
+	};
+
 	const perfomanceData = data.data ? data.data : data;
 	const formattedData = perfomanceData.data
 		.map(item => ({
 			...item,
-			kind: perfomanceData.kind[item.kind],
+			kind: performanceMapping[item.kind],
 		}))
 		.reverse();
 

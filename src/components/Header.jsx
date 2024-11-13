@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import logo from '../assets/logo.png';
 
 export default function Header() {
@@ -10,11 +11,11 @@ export default function Header() {
 			/>
 			<ul className='flex justify-around items-center flex-grow'>
 				<li>
-					<a
-						href='#'
+					<Link
+						href='/'
 						className='relative after:content-[""] after:absolute after:left-0 after:bottom-[-3px] after:w-0 after:h-[3px] after:bg-white after:transition-all after:duration-200 hover:after:w-full'>
 						Accueil
-					</a>
+					</Link>
 				</li>
 				<li>
 					<a
