@@ -26,6 +26,11 @@ export default function Activity({ id }) {
 		day: parseInt(session.day.slice(-2)),
 	}));
 
+	const maxWeight = Math.max(...formattedSessions.map(session => session.kilogram));
+	const minWeight = Math.min(...formattedSessions.map(session => session.kilogram));
+	const minDomain = minWeight - 2;
+	const maxDomain = maxWeight + 1;
+
 	return (
 		<ResponsiveContainer
 			width='100%'
@@ -46,20 +51,32 @@ export default function Activity({ id }) {
 				</text>
 				<CartesianGrid
 					vertical={false}
-					strokeDasharray='3 3'
+					strokeDasharray='3'
 				/>
 				<XAxis
 					dataKey='day'
 					tickLine={false}
 					stroke='#9B9EAC'
-					dy={10}
+					dy={15}
 				/>
 				<YAxis
+					yAxisId='right'
+					dataKey='kilogram'
 					orientation='right'
 					tickLine={false}
 					axisLine={false}
 					stroke='#9B9EAC'
-					dx={10}
+					dx={20}
+					interval={1}
+					domain={[minDomain, maxDomain]}
+				/>
+				<YAxis
+					yAxisId='left'
+					dataKey='calories'
+					orientation='right'
+					tickLine={false}
+					axisLine={false}
+					hide={true}
 				/>
 				<Tooltip
 					contentStyle={{ backgroundColor: '#E60000', color: '#fff' }}
@@ -83,6 +100,7 @@ export default function Activity({ id }) {
 					}}
 				/>
 				<Bar
+					yAxisId='right'
 					barSize={10}
 					dataKey='kilogram'
 					name='Poids (kg)'
@@ -90,6 +108,7 @@ export default function Activity({ id }) {
 					radius={[5, 5, 0, 0]}
 				/>
 				<Bar
+					yAxisId='left'
 					barSize={10}
 					dataKey='calories'
 					name='Calories brûlées (kCal)'
