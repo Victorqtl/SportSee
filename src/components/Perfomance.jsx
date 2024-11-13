@@ -1,15 +1,30 @@
 'use client';
 
-import { mockedUserPerformance } from '../services/mockedData';
+import PropTypes from 'prop-types';
+import useFetch from '@/services/useFetch';
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
 
+/**
+ * @component Performance
+ * @description Affiche le graphique des performances de l'utilisateur
+ * @param {Object} props
+ * @param {string} props.id L'identifiant de l'utilisateur
+ * @returns {JSX.Element} Graphique radar
+ */
 export default function Performance({ id }) {
-	const performance = mockedUserPerformance(parseInt(id));
+	const { data, loading, error } = useFetch(id, 'performance');
 
-	const formattedData = performance.data
+	if (loading) return <div>Loading...</div>;
+
+	if (error) {
+		return <div>Une erreur est survenue</div>;
+	}
+
+	const perfomanceData = data.data ? data.data : data;
+	const formattedData = perfomanceData.data
 		.map(item => ({
 			...item,
-			kind: performance.kind[item.kind],
+			kind: perfomanceData.kind[item.kind],
 		}))
 		.reverse();
 
@@ -22,7 +37,10 @@ export default function Performance({ id }) {
 				cy='50%'
 				outerRadius='70%'
 				data={formattedData}>
-				<PolarGrid stroke='#FFFFFF' />
+				<PolarGrid
+					stroke='#FFFFFF'
+					radialLines={false}
+				/>
 				<PolarAngleAxis
 					dataKey='kind'
 					tick={{
@@ -40,3 +58,7 @@ export default function Performance({ id }) {
 		</ResponsiveContainer>
 	);
 }
+
+Performance.propTypes = {
+	id: PropTypes.string.isRequired,
+};

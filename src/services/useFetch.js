@@ -1,7 +1,13 @@
 import { useState, useEffect } from "react";
 import fetchData from "./apiService";
 
-
+/**
+ * @function useFetch
+ * @description Hook personnalisé pour récupérer les données
+ * @param {string} id - ID de l'utilisateur
+ * @param {string} type - Type de données
+ * @returns {{data: Object|null, loading: boolean, error: boolean}} État du fetch
+ */
 export default function useFetch(id, type) {
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true)

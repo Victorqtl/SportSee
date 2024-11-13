@@ -2,12 +2,21 @@
 
 import { use } from 'react';
 import useFetch from '@/services/useFetch';
+import PropTypes from 'prop-types';
 import Activity from '@/components/Activity';
 import AverageSessions from '@/components/AverageSessions';
 import UserDataCards from '@/components/UserDataCards';
 import Performance from '@/components/Perfomance';
 import Score from '@/components/Score';
 
+/**
+ * @component Profile
+ * @description Page de profil utilisateur affichant les statistiques et données sportives
+ * @param {Object} props
+ * @param {Object} props.params - Paramètres de routage
+ * @param {string} props.params.id - Identifiant de l'utilisateur
+ * @returns {JSX.Element} Page de profil complète avec graphiques et données
+ */
 export default function Profile({ params }) {
 	const resolvedParams = use(params);
 	const { id } = resolvedParams;
@@ -61,3 +70,9 @@ export default function Profile({ params }) {
 		</>
 	);
 }
+
+Profile.propTypes = {
+	params: PropTypes.shape({
+		id: PropTypes.string.isRequired,
+	}).isRequired,
+};

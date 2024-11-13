@@ -1,8 +1,19 @@
 'use client';
 
+import PropTypes from 'prop-types';
 import { RadialBarChart, RadialBar, Legend, ResponsiveContainer } from 'recharts';
 
-export default function ScoreGraphic({ userMainData }) {
+/**
+ * @component Score
+ * @description Affiche le graphique du score de l'utilisateur en pourcentage
+ * @param {Object} props
+ * @param {Object} props.userMainData - Données principales de l'utilisateur
+ * @param {number} [props.userMainData.todayScore] - Score du jour (0-1)
+ * @param {number} [props.userMainData.score] - Score alternatif (0-1)
+ * @returns {JSX.Element} Graphique radial
+ */
+
+export default function Score({ userMainData }) {
 	const roundScore = userMainData.todayScore
 		? Math.round(userMainData.todayScore * 100)
 		: Math.round(userMainData.score * 100);
@@ -80,3 +91,10 @@ export default function ScoreGraphic({ userMainData }) {
 		</ResponsiveContainer>
 	);
 }
+
+Score.propTypes = {
+	userMainData: PropTypes.shape({
+		todayScore: PropTypes.number,
+		score: PropTypes.number,
+	}).isRequired,
+};

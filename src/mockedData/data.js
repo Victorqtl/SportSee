@@ -120,31 +120,31 @@ export const USER_AVERAGE_SESSIONS = [
         userId: 12,
         sessions: [
             {
-                day: "L",
+                day: "1",
                 sessionLength: 30
             },
             {
-                day: "M",
+                day: "2",
                 sessionLength: 23
             },
             {
-                day: "M",
+                day: "3",
                 sessionLength: 45
             },
             {
-                day: "J",
+                day: "4",
                 sessionLength: 50
             },
             {
-                day: "V",
+                day: "5",
                 sessionLength: 0
             },
             {
-                day: "S",
+                day: "6",
                 sessionLength: 0
             },
             {
-                day: "D",
+                day: "7",
                 sessionLength: 60
             }
         ]
@@ -153,31 +153,31 @@ export const USER_AVERAGE_SESSIONS = [
         userId: 18,
         sessions: [
             {
-                day: 'L',
+                day: '1',
                 sessionLength: 30
             },
             {
-                day: 'M',
+                day: '2',
                 sessionLength: 40
             },
             {
-                day: 'M',
+                day: '3',
                 sessionLength: 50
             },
             {
-                day: 'J',
+                day: '4',
                 sessionLength: 30
             },
             {
-                day: 'V',
+                day: '5',
                 sessionLength: 30
             },
             {
-                day: 'S',
+                day: '6',
                 sessionLength: 50
             },
             {
-                day: 'D',
+                day: '7',
                 sessionLength: 50
             }
         ]

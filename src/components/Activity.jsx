@@ -1,10 +1,16 @@
 'use client';
 
-import { fetchUserActivity } from '@/services/apiService';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-import { useEffect, useState } from 'react';
 import useFetch from '@/services/useFetch';
+import PropTypes from 'prop-types';
 
+/**
+ * @component Activity
+ * @description Affiche le graphique d'activité quotidienne avec le poids est les calories
+ * @param {Object} props
+ * @param {string} props.id Identifiant de l'utilisateur
+ * @returns {JSX.Element} Graphique en barres
+ */
 export default function Activity({ id }) {
 	const { data, loading, error } = useFetch(id, 'activity');
 
@@ -94,3 +100,7 @@ export default function Activity({ id }) {
 		</ResponsiveContainer>
 	);
 }
+
+Activity.propTypes = {
+	id: PropTypes.string.isRequired,
+};
