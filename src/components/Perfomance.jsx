@@ -29,8 +29,8 @@ export default function Performance({ id }) {
 		6: 'Intensité',
 	};
 
-	const perfomanceData = data.data ? data.data : data;
-	const formattedData = perfomanceData.data
+	const perfomanceData = data.data.data ? data.data.data : data.data;
+	const formattedData = perfomanceData
 		.map(item => ({
 			...item,
 			kind: performanceMapping[item.kind],
